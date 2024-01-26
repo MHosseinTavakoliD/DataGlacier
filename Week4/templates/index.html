@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Values</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSLUWVW3GNcFSozVqqVxDzRJPmCTpW6I9qT1fW" crossorigin="anonymous">
+    <!-- Your additional CSS styles can go here -->
+    <style>
+        /* Your existing CSS styles or any new styles */
+    </style>
+</head>
+
+<body>
+
+<h2>Input Values</h2>
+<div class="container">
+<form action="/predict" method="post" class="login">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">X</th>
+          <th scope="col">Y</th>
+          <th scope="col">Z</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number" class="form-control" id="x-value" name="x-value" value="{{ x_value|default('', true) }}"></td>
+          <td><input type="number" class="form-control" id="y-value" name="y-value" value="{{ y_value|default('', true) }}"></td>
+          <td><input type="number" class="form-control" id="z-value" name="z-value" value="{{ z_value|default('', true) }}"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary">Predict</button>
+</form>
+</div>
+<!-- Optional: Display Prediction Result -->
+{% if prediction_text %}
+    <p>{{ prediction_text }}</p>
+{% endif %}
+
+</body>
+</html>
