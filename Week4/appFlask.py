@@ -27,7 +27,7 @@ def predict():
     output = round(prediction, 2)
 
     # Include the input values in the render_template call
-    return render_template('index.html', prediction_text='The summation is {}'.format(output),
+    return render_template('index.html', prediction_text='Hold on to it! I am not yet an AI BOT, but fo now, I can calculate the summation of these numbers! {}'.format(output),
                            x_value=x_value, y_value=y_value, z_value=z_value)
 
 if __name__ == '__main__':
